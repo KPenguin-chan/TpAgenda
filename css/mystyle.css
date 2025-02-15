@@ -1,0 +1,29 @@
+#today {
+    -fx-text-fill: coral;
+}
+
+.scroll-pane {
+    -fx-background: #ddf5ee;
+    -fx-border-color: #5F9EA0;
+}
+
+#opaque{
+    -fx-background-color: #efbef3;
+}
+
+.toggle-button{
+    -fx-background-color:  #fdf0fe ;
+}
+
+.toggle-button:selected {
+    -fx-background-color:  #f391fb;
+}
+
+.table-view{
+    -fx-background-color:#efbef3  ;
+}
+#Colonne{
+    -fx-background-color: #a059a6  ;
+
+}
+
