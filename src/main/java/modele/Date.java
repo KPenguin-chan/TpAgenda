@@ -47,12 +47,23 @@ public class Date implements Serializable {
 	 * Elle renvoie un booléen. True si toute les conditions sont respecté et sinon elle renvoie False/
 	 * @return False or True
 	 */
-public boolean estValide () {
-	return chAnnee > 1582 &&
-		chMois >= 1 && chMois <= 12 &&
-		chJour >= 1 && chJour <= Date.dernierJourDuMois (chMois, chAnnee) ;
+	public boolean estValide() {
+		if (chAnnee < 1583) {
+			return false; // On n’accepte pas les dates avant 1583
+		}
 
-}
+		if (chMois < 1 || chMois > 12) {
+			return false; // Mois doit être entre 1 et 12
+		}
+
+		if (chJour < 1 || chJour > dernierJourDuMois(chMois, chAnnee)) {
+			return false; // Jour doit être valide pour le mois et l'année donnés
+		}
+
+		return true;
+	}
+
+
 
 	/**
 	 * Cette méthode prend en paramètre une mois et une année de type int. Avec ces paramètres elle est capable d'identifier le dernier du mois avec des tests.

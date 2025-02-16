@@ -3,7 +3,7 @@ package modele;
 
   
 import java.util.Calendar;
- 
+
 public class DateCalendrier extends Date implements ConstantesCalendrier, Comparable <Date>  {
 
 	private int chJourSemaine ; //1:lundi...
