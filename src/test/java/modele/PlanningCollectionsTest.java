@@ -62,13 +62,17 @@ class PlanningCollectionsTest {
         expectedPlanning.ajout(r3);
 
 
-        System.out.println(p1.getChSetReservations().first());
         assertEquals(expectedPlanning.getChSetReservations(), p1.getReservations(r1.getDate()));
         assertNull( p1.getReservations(r4.getDate()));
         assertNull(p2.getReservations(r4.getDate()));
     }
 
-
+/* 2)La méthode plusAncienneReservation n'existe pas dans PlanningCollections mais si elle devait exister au sein
+* de planningCollections elle ne servirait pas à grand chose car l'indice de la plus Ancienne Réservation est 0 étant donné
+* que les réservation sont stockés dans un TreeSet
+*
+*
+* 2)La méthode Tri n'existe pas non plus car les réservations sont dans un TreeSet.*/
 
 
 }
