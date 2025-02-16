@@ -31,13 +31,9 @@ public class PlageHoraire  {
      * @return false si la plage horaire n'est pas valide et true si elle l'est
      */
     public boolean estValide () {
-        if (!chDebut.estValide() || !chFin.estValide())
-            return false;
-        if (chFin.toMinutes() < chDebut.toMinutes())
-            return false;
-        if (chFin.toMinutes() - chDebut.toMinutes() < DUREEMIN)
-            return false;
-        return true;
+        if (!chDebut.estValide() || !chFin.estValide()) return false;
+        if (chFin.toMinutes() <= chDebut.toMinutes()) return false;
+        return (chFin.toMinutes() - chDebut.toMinutes()) >= DUREEMIN;
     }
 
     /**compareTo compare la plage horaire this avec parpH.
@@ -47,12 +43,9 @@ public class PlageHoraire  {
      * inclusion)
      */
     public int compareTo (PlageHoraire parpH) {
-        if (parpH.chDebut.toMinutes() >= chFin.toMinutes())
-            return -1;
-        else if (parpH.chFin.toMinutes() <= chDebut.toMinutes())
-            return 1;
-        else
-            return 0;
+        if (this.chFin.toMinutes() <= parpH.chDebut.toMinutes()) return -1;  // this avant autre
+        if (this.chDebut.toMinutes() >= parpH.chFin.toMinutes()) return 1;   // this après autre
+        return 0;  // chevauchement ou inclusion
     }
     /**Renvoie la durée entre l'horaire de début et l'horaire de fin
      *

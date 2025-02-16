@@ -26,8 +26,10 @@ public class PlanningCollections {
      */
     public void ajout(Reservation parReservation) throws ExceptionPlanning {
 
-        if (!parReservation.estValide())
+        if (!parReservation.estValide()){
+            System.out.println(parReservation);
             throw new ExceptionPlanning(0);
+        }
 
         Iterator<Reservation> iteratorList = chListReservations.iterator();
         while (iteratorList.hasNext()) {

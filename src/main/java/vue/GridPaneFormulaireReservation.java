@@ -194,13 +194,13 @@ public class GridPaneFormulaireReservation extends GridPane {
     //}
 
     public Horaire getHoraireDebut() {
-        return new Horaire(comboHeureDebut.getSelectionModel().getSelectedIndex()+8,
-                comboMinuteDebut.getSelectionModel().getSelectedIndex()*15);
+        return new Horaire(Integer.parseInt(comboHeureDebut.getValue()),
+                Integer.parseInt(comboMinuteDebut.getValue()));
     }
 
     public Horaire getHoraireFin() {
-        return new Horaire(comboHeureFin.getSelectionModel().getSelectedIndex()+8,
-                comboMinuteFin.getSelectionModel().getSelectedIndex()*15);
+        return new Horaire(Integer.parseInt(comboHeureFin.getValue()),
+                Integer.parseInt(comboMinuteFin.getValue()));
     }
 
     //public ComboBox<String> getComboHeureFin() {

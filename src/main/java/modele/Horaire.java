@@ -62,13 +62,7 @@ public class Horaire {
      * @return false si l'horaire n'est pas valide et true si il l'est
      */
     public boolean estValide() {
-        if (chQuartHeure % 15 != 0)
-            return false;
-        if (chHeure < 0 || chHeure > 23)
-            return false;
-        if (chQuartHeure < 0 || chQuartHeure > 59)
-            return false;
-        return true;
+        return (chHeure >= 0 && chHeure <= 23) && (chQuartHeure>= 0 && chQuartHeure <= 59) && (chQuartHeure % 15 == 0);
     }
 
 
