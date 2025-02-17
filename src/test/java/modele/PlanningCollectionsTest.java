@@ -62,8 +62,11 @@ class PlanningCollectionsTest {
         expectedPlanning.ajout(r3);
 
 
+        //test 1 : la réservation est dans le tableau de réservation
         assertEquals(expectedPlanning.getChSetReservations(), p1.getReservations(r1.getDate()));
+        //test 2 : la réservation n'est pas dans le tableau de réservation et le tableau est non vide
         assertNull( p1.getReservations(r4.getDate()));
+        //test 3: la réservation n'est pas dans le tableau de réservation et le tableau est vide
         assertNull(p2.getReservations(r4.getDate()));
     }
 
