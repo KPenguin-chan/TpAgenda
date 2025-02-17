@@ -38,7 +38,7 @@ class PlanningCollectionsTest {
     void getReservations() throws ExceptionPlanning {
 
         /*
-        2)Les différences qu'on peut voir sont le type de la liste qui est un hashset qui fait que la manière de parcourir est différente,7
+        2)Les différences qu'on peut voir sont le type de la liste qui est un Treeset qui fait que la manière de parcourir est différente,7
             Il y a également un test dans le cas d'une liste vide qui permet de renvoyer null. Ces changments n'affecte pas les test à faire
             car c'est la même méthode dans l'ensemble.
 
